@@ -1,0 +1,180 @@
+html, body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: .25rem;
+  padding: 0;
+}
+
+a, a:hover, a:visited, a:link, a:active
+{
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: .5rem;
+  /*overflow: hidden;*/
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: .9rem .9rem;
+}
+
+li a:hover, span:hover, .dropdown:hover {
+  background-color: #ffd180;
+  color: #171a1d;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 1rem 1rem;
+  text-align: left;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffd180;
+  box-shadow: 0 .5rem 1rem 0 rgba(0,0,0,0.2);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#login-btn{
+  /*color: white;*/
+  float: right; !important;
+}
+
+#signup-btn {
+  float: right; !important;
+}
+
+#navbar ul {
+  background-color: #021e18;
+  border: #021e18;
+  border-radius: .5rem;
+  font-weight: bolder;
+}
+
+#navbar li {
+  vertical-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+  width: 100%;
+  padding-right: .1rem;
+  padding-left: .1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#map {
+  bottom:0;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  padding-left: 0;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+input {
+  font-size: small;
+  margin-inline: .5rem;
+}
+
+h1 {
+  font-family: "Linux Libertine Display G", sans-serif;
+  color: #525454;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0 1rem 0;
+  text-align: center;
+}
+
+.options-button {
+  width: -moz-available;
+  width: -webkit-fill-available;
+  position: relative;
+  margin-top: .5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #062c33;
+}
+
+.options-button:hover {
+  background-color: #ffd984;
+}
+
+.options-box {
+  background: rgba(255,255,255,0.76);
+  border: 2px solid #021e18;
+  border-radius: .5rem;
+  height: 100%;
+  line-height: 1.5rem;
+  margin: 0 0 0 0;
+  box-sizing: border-box;
+  text-align: left;
+  padding-block-end: 1rem;
+}
+
+.options-row {
+  margin-left: 0;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-bottom: #5a6268 groove 1px;
+}
+
+.options-text {
+  padding-left: 1rem;
+  padding-right: .5rem;
+}
+
+/*noinspection ALL*/
+.options-input-box {
+  width: -moz-available;
+  width: -webkit-fill-available;
+  position: relative;
+  margin-top: .5rem;
+}
+
+.options-dropdown {
+  margin-inline: .1rem;
+  display: compact;
+}
+
+.options-dropbtn {
+  border: none;
+  cursor: pointer;
+}
+
+.options-dropdown:hover .options-dropdown-content {
+  display: block;
+  background-color: #ffd180;
+}
+
+#pano {
+  width: 25%;
+  height: 25%;
+}
+
+
