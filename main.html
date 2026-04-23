@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns="http://www.w3.org/1999/html">
+  <head>
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link type="text/css" rel="stylesheet" href="./css/style.css"/>
+
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+      <link href="./css/fontawesome.css" rel="stylesheet">
+      <link href="./css/brands.css" rel="stylesheet">
+      <link href="./css/solid.css" rel="stylesheet">
+      <script defer src="./js/brands.js"></script>
+      <script defer src="./js/solid.js"></script>
+      <script defer src="./js/fontawesome.js"></script>
+
+      <title>Month.ly - Monthly rentals aggregator</title>
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid" id="navbar">
+        <div class="row no-gutters flex-row">
+                <ul class="col-12 col-xl-4">
+                    <li class="d-block"><a href="#main">Map</a></li>
+                    <li class="d-block"><a href="#list">List</a></li>
+                    <li class="dropdown d-block">
+                        <a href="javascript:void(0)" class="dropbtn dropdown-toggle" data-toggle="dropdown">My Month.ly</a>
+                        <div class="dropdown-content dropdown-menu">
+                            <div class="dropdown-header">Actions:</div>
+                            <a href="#" class="dropdown-content">Saved Listings</a>
+                            <a href="#" class="dropdown-content">Profile</a>
+                            <a href="#" class="dropdown-content">Create a Listing</a>
+                            <a href="#" class="dropdown-content">Logout</a>
+                        </div>
+                    </li>
+                    <li class="nav navbar-right " id="signup-btn">
+                        <a href="#" data-toggle="modal" data-target="#signupModal"><div class="fa fa-user fa-inverse"></div><div class="d-none d-sm-inline d-xl-block">SignUp</div></a>
+                    </li>
+                    <li class="nav navbar-right " id="login-btn">
+                        <a href="#" data-toggle="modal" data-target="#loginModal"><div class="fa fa-sign-in-alt fa-inverse"></div><div class="d-none d-sm-inline d-xl-block" >LogIn</div></a>
+                    </li>
+                </ul>
+            <div class="col-0 col-xl-8"></div>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign In</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="InputEmail">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="InputEmail" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="InputPassword">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="InputPassword" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check align-items-center">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember my info</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row no-gutters justify-content-between" style="margin-left: 0">
+            <div class="options-box col-5 col-md-4">
+                <div class="row no-gutters" >
+                <h1 class="col-12">Monthly rentals in...</h1>
+                </div>
+                <div class="row options-row no-gutters justify-content-center">
+                    <label for="zoom-to-area-input"></label><input id="zoom-to-area-input" class="options-input-box" type="text" placeholder="...Prague? Arkansas?">
+                    <input id="zoom-to-area-button" class="options-button" type="button" value="Go">
+                </div>
+                <div class="row options-row no-gutters justify-content-around">
+                    <input id="show-listings-button" class="options-button" type="button" value="Show Listings">
+                    <input id="hide-listings-button" class="options-button" type="button" value="Hide Listings">
+                </div>
+                <div class="row options-row no-gutters justify-content-center">
+                    <span class="text options-text col-11">Draw an area to search</span>
+                    <input id="toggle-drawing-button" class="options-button" type="button" value="Drawing Tools">
+                </div>
+                <div class="row options-row no-gutters justify-content-center">
+                    <span class="text options-text col-11 col-lg-4"> Or within a </span>
+                    <label for="max-duration"></label><select id="max-duration" class="options-dropdown options-dropbtn col-5 col-lg-3">
+                        <option value="10" class="">10 min</option>
+                        <option value="15">15 min</option>
+                        <option value="30">30 min</option>
+                        <option value="60">1 hour</option>
+                    </select>
+                    <label for="mode"></label><select id="mode" class="options-dropdown options-dropbtn col-5 col-lg-3">
+                        <option value="DRIVING">drive</option>
+                        <option value="WALKING">walk</option>
+                        <option value="BICYCLING">bike</option>
+                        <option value="TRANSIT">transit ride</option>
+                    </select>
+                    <span class="text options-text col-3 col-md-1"><span class="text-hide">_</span> of</span>
+                    <label for="search-within-time-input"></label><input id="search-within-time-input" type="text" placeholder="Place or address" class="options-input-box">
+                    <input id="search-within-time-button" class="options-button" type="button" value="Go" >
+                </div>
+                <div class="row options-row no-gutters justify-content-center">
+                    <span class="text options-text col-11">Check what's nearby</span>
+                    <label for="places-search-input"></label><input id="places-search-input" type="text" placeholder="Ex: Pizza delivery in NYC" class="options-input-box">
+                    <input id="places-search-button" class="options-button" type="button" value="Go" >
+                </div>
+            </div>
+            <div id="mapholder" class="col-7 col-md-8"></div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+
+<!--    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=&v=3&callback=initMap&libraries=drawing,geometry,places">
+    </script>-->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
